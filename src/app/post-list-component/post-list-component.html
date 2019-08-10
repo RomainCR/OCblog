@@ -1,0 +1,22 @@
+<li
+  [ngClass]="{
+    'list-group-item': true,
+    'list-group-item-success': loveIts > 0,
+    'list-group-item-danger': loveIts < 0
+  }"
+>
+  <!-- <post-list-item
+    *ngFor="let article of articles"
+    [articleTitle]="article.title"
+    [articleContent]="article.content"
+    [articleDate]="article.created_at"
+  >
+  </post-list-item> -->
+  <h4 [ngStyle]="{ color: getColor() }">
+    {{ articleTitle }}
+  </h4>
+  <p>{{ articleDate | date: "short" | uppercase }}</p>
+  <p>{{ articleContent }}</p>
+  <button class="btn btn-success" (click)="onLove()">Love it</button>
+  <button class="btn btn-danger" (click)="onDont()">Don't love it</button>
+</li>
